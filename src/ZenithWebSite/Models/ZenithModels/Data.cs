@@ -21,58 +21,9 @@ namespace ZenithWebSite.Models.ZenithModels
                 }
                 
                 );
+
+                db.SaveChanges();
             }
-
-            if (!db.Events.Any())
-            {
-                db.Events.Add(new Event
-                {
-                    EventStart = new DateTime(2017, 4, 4, 8, 30, 0),
-                    EventEnd = new DateTime(2017, 4, 4, 10, 30, 0),
-                    Username = "a",
-                    CreationDate = DateTime.Now,
-                    IsActive = true,
-                    ActivityId = db.Activities.FirstOrDefault(f => f.Description == "Senior's Golf Tournament").ActivityId
-                });
-                db.Events.Add(new Event
-                {
-                    EventStart = new DateTime(2017, 4, 5, 8, 30, 0),
-                    EventEnd = new DateTime(2017, 4, 5, 10, 30, 0),
-                    Username = "a",
-                    CreationDate = DateTime.Now,
-                    IsActive = true,
-                    ActivityId = db.Activities.FirstOrDefault(f => f.Description == "Leadership General Assembly Meeting").ActivityId
-                });
-                db.Events.Add(new Event
-                {
-                    EventStart = new DateTime(2017, 4, 7, 17, 30, 0),
-                    EventEnd = new DateTime(2017, 4, 7, 19, 15, 0),
-                    Username = "a",
-                    CreationDate = DateTime.Now,
-                    IsActive = true,
-                    ActivityId = db.Activities.FirstOrDefault(f => f.Description == "Youth Bowling Tournament").ActivityId
-                });
-                db.Events.Add(new Event
-                {
-                    EventStart = new DateTime(2017, 4, 7, 19, 00, 0),
-                    EventEnd = new DateTime(2017, 4, 7, 20, 00, 0),
-                    Username = "a",
-                    CreationDate = DateTime.Now,
-                    IsActive = true,
-                    ActivityId = db.Activities.FirstOrDefault(f => f.Description == "Young ladies cooking lessons").ActivityId
-                });
-                db.Events.Add(new Event
-                {
-                    EventStart = new DateTime(2017, 4, 8, 8, 30, 0),
-                    EventEnd = new DateTime(2017, 4, 8, 10, 30, 0),
-                    Username = "a",
-                    CreationDate = DateTime.Now,
-                    IsActive = true,
-                    ActivityId = db.Activities.FirstOrDefault(f => f.Description == "Youth craft lessons").ActivityId
-                });
-
-              
-            };
 
             if (!db.Activities.Any())
             {
@@ -146,6 +97,60 @@ namespace ZenithWebSite.Models.ZenithModels
                     Description = "Garage Sale",
                     CreationDate = DateTime.Now
                 });
+
+                db.SaveChanges();
+            };
+
+
+            if (!db.Events.Any())
+            {
+                db.Events.Add(new Event
+                {
+                    EventStart = new DateTime(2017, 4, 4, 8, 30, 0),
+                    EventEnd = new DateTime(2017, 4, 4, 10, 30, 0),
+                    Username = "a",
+                    CreationDate = DateTime.Now,
+                    IsActive = true,
+                    ActivityId = db.Activities.FirstOrDefault(f => f.Description == "Senior's Golf Tournament").ActivityId
+                });
+                db.Events.Add(new Event
+                {
+                    EventStart = new DateTime(2017, 4, 5, 8, 30, 0),
+                    EventEnd = new DateTime(2017, 4, 5, 10, 30, 0),
+                    Username = "a",
+                    CreationDate = DateTime.Now,
+                    IsActive = true,
+                    ActivityId = db.Activities.FirstOrDefault(f => f.Description == "Leadership General Assembly Meeting").ActivityId
+                });
+                db.Events.Add(new Event
+                {
+                    EventStart = new DateTime(2017, 4, 7, 17, 30, 0),
+                    EventEnd = new DateTime(2017, 4, 7, 19, 15, 0),
+                    Username = "a",
+                    CreationDate = DateTime.Now,
+                    IsActive = true,
+                    ActivityId = db.Activities.FirstOrDefault(f => f.Description == "Youth Bowling Tournament").ActivityId
+                });
+                db.Events.Add(new Event
+                {
+                    EventStart = new DateTime(2017, 4, 7, 19, 00, 0),
+                    EventEnd = new DateTime(2017, 4, 7, 20, 00, 0),
+                    Username = "a",
+                    CreationDate = DateTime.Now,
+                    IsActive = true,
+                    ActivityId = db.Activities.FirstOrDefault(f => f.Description == "Young ladies cooking lessons").ActivityId
+                });
+                db.Events.Add(new Event
+                {
+                    EventStart = new DateTime(2017, 4, 8, 8, 30, 0),
+                    EventEnd = new DateTime(2017, 4, 8, 10, 30, 0),
+                    Username = "a",
+                    CreationDate = DateTime.Now,
+                    IsActive = true,
+                    ActivityId = db.Activities.FirstOrDefault(f => f.Description == "Youth craft lessons").ActivityId
+                });
+
+
             };
 
             db.SaveChanges();

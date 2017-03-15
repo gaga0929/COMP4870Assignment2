@@ -234,8 +234,8 @@ C:\Users\GaGa\Documents\Visual Studio 2015\Projects\ZenithSociety\src\ZenithWebS
 C:\Users\GaGa\Documents\Visual Studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Data\ApplicationDbContext.cs
 C:\Users\GaGa\Documents\Visual Studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Data\Migrations\00000000000000_CreateIdentitySchema.cs
 C:\Users\GaGa\Documents\Visual Studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Data\Migrations\00000000000000_CreateIdentitySchema.Designer.cs
-C:\Users\GaGa\Documents\Visual Studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Data\Migrations\20170305155805_FirstMigration.cs
-C:\Users\GaGa\Documents\Visual Studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Data\Migrations\20170305155805_FirstMigration.Designer.cs
+C:\Users\GaGa\Documents\Visual Studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Data\Migrations\20170315190424_FirstMigration.cs
+C:\Users\GaGa\Documents\Visual Studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Data\Migrations\20170315190424_FirstMigration.Designer.cs
 C:\Users\GaGa\Documents\Visual Studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Data\Migrations\ApplicationDbContextModelSnapshot.cs
 C:\Users\GaGa\Documents\Visual Studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Models\ApplicationUser.cs
 C:\Users\GaGa\Documents\Visual Studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Models\AccountViewModels\ExternalLoginConfirmationViewModel.cs

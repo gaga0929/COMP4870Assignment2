@@ -13,8 +13,7 @@ namespace ZenithWebSite.Data.Migrations
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
             modelBuilder
-                .HasAnnotation("ProductVersion", "1.0.1")
-                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                .HasAnnotation("ProductVersion", "1.0.1");
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRole", b =>
                 {
@@ -137,6 +136,10 @@ namespace ZenithWebSite.Data.Migrations
 
                     b.Property<bool>("EmailConfirmed");
 
+                    b.Property<string>("FirstName");
+
+                    b.Property<string>("LastName");
+
                     b.Property<bool>("LockoutEnabled");
 
                     b.Property<DateTimeOffset?>("LockoutEnd");
@@ -170,6 +173,44 @@ namespace ZenithWebSite.Data.Migrations
                         .HasName("UserNameIndex");
 
                     b.ToTable("AspNetUsers");
+                });
+
+            modelBuilder.Entity("ZenithWebSite.Models.ZenithModels.Activity", b =>
+                {
+                    b.Property<int>("ActivityId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("CreationDate");
+
+                    b.Property<string>("Description");
+
+                    b.HasKey("ActivityId");
+
+                    b.ToTable("Activities");
+                });
+
+            modelBuilder.Entity("ZenithWebSite.Models.ZenithModels.Event", b =>
+                {
+                    b.Property<int>("EventId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("ActivityId");
+
+                    b.Property<DateTime>("CreationDate");
+
+                    b.Property<DateTime>("EventEnd");
+
+                    b.Property<DateTime>("EventStart");
+
+                    b.Property<bool>("IsActive");
+
+                    b.Property<string>("Username");
+
+                    b.HasKey("EventId");
+
+                    b.HasIndex("ActivityId");
+
+                    b.ToTable("Events");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRoleClaim<string>", b =>
@@ -206,6 +247,14 @@ namespace ZenithWebSite.Data.Migrations
                     b.HasOne("ZenithWebSite.Models.ApplicationUser")
                         .WithMany("Roles")
                         .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("ZenithWebSite.Models.ZenithModels.Event", b =>
+                {
+                    b.HasOne("ZenithWebSite.Models.ZenithModels.Activity", "ActivityDetails")
+                        .WithMany()
+                        .HasForeignKey("ActivityId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
         }
