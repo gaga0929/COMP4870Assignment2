@@ -15,12 +15,15 @@
             <th>
                 @Html.DisplayNameFor(model => model.CreationDate)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EventEnd)
-            </th>
+            
             <th>
                 @Html.DisplayNameFor(model => model.EventStart)
             </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.EventEnd)
+            </th>
+            
             <th>
                 @Html.DisplayNameFor(model => model.IsActive)
             </th>
@@ -31,17 +34,19 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var item in Model.OrderBy(a => a.EventStart)) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.CreationDate)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EventEnd)
-            </td>
+            
             <td>
                 @Html.DisplayFor(modelItem => item.EventStart)
             </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EventEnd)
+            </td>
+            
             <td>
                 @Html.DisplayFor(modelItem => item.IsActive)
             </td>

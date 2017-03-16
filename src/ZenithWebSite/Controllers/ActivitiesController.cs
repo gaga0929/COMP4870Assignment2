@@ -55,6 +55,8 @@ namespace ZenithWebSite.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ActivityId,CreationDate,Description")] Activity activity)
         {
+            @activity.CreationDate = DateTime.Now;
+
             if (ModelState.IsValid)
             {
                 _context.Add(activity);

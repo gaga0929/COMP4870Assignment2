@@ -11,13 +11,16 @@
         <h4>Activity</h4>
         <hr />
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <div class="form-group">
+        
+        <!--creation date is created automatically -->
+        @*<div class="form-group">
             <label asp-for="CreationDate" class="col-md-2 control-label"></label>
             <div class="col-md-10">
                 <input asp-for="CreationDate" class="form-control" />
                 <span asp-validation-for="CreationDate" class="text-danger" />
             </div>
-        </div>
+        </div>*@
+        
         <div class="form-group">
             <label asp-for="Description" class="col-md-2 control-label"></label>
             <div class="col-md-10">

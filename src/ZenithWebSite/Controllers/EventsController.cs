@@ -46,7 +46,7 @@ namespace ZenithWebSite.Controllers
         // GET: Events/Create
         public IActionResult Create()
         {
-            ViewData["ActivityId"] = new SelectList(_context.Activities, "ActivityId", "ActivityId");
+            ViewData["ActivityId"] = new SelectList(_context.Activities, "ActivityId", "Description");
             return View();
         }
 
@@ -57,13 +57,14 @@ namespace ZenithWebSite.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("EventId,ActivityId,CreationDate,EventEnd,EventStart,IsActive,Username")] Event @event)
         {
+            @event.CreationDate = DateTime.Now;
             if (ModelState.IsValid)
             {
                 _context.Add(@event);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            ViewData["ActivityId"] = new SelectList(_context.Activities, "ActivityId", "ActivityId", @event.ActivityId);
+            ViewData["ActivityId"] = new SelectList(_context.Activities, "ActivityId", "Description", @event.ActivityId);
             return View(@event);
         }
 
@@ -80,7 +81,7 @@ namespace ZenithWebSite.Controllers
             {
                 return NotFound();
             }
-            ViewData["ActivityId"] = new SelectList(_context.Activities, "ActivityId", "ActivityId", @event.ActivityId);
+            ViewData["ActivityId"] = new SelectList(_context.Activities, "ActivityId", "Description", @event.ActivityId);
             return View(@event);
         }
 
@@ -116,7 +117,7 @@ namespace ZenithWebSite.Controllers
                 }
                 return RedirectToAction("Index");
             }
-            ViewData["ActivityId"] = new SelectList(_context.Activities, "ActivityId", "ActivityId", @event.ActivityId);
+            ViewData["ActivityId"] = new SelectList(_context.Activities, "ActivityId", "Description", @event.ActivityId);
             return View(@event);
         }
 

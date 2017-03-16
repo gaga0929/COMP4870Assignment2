@@ -12,25 +12,21 @@
         <hr />
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="form-group">
-            <label asp-for="ActivityId" class="col-md-2 control-label"></label>
+            <label asp-for="ActivityId" class="col-md-2 control-label">Activity</label>
             <div class="col-md-10">
                 <select asp-for="ActivityId" class ="form-control" asp-items="ViewBag.ActivityId"></select>
             </div>
         </div>
-        <div class="form-group">
+        <!--creation date is automatically set to now, refer to EventsController-->
+        @*<div class="form-group">
             <label asp-for="CreationDate" class="col-md-2 control-label"></label>
             <div class="col-md-10">
                 <input asp-for="CreationDate" class="form-control" />
                 <span asp-validation-for="CreationDate" class="text-danger" />
             </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="EventEnd" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="EventEnd" class="form-control" />
-                <span asp-validation-for="EventEnd" class="text-danger" />
-            </div>
-        </div>
+        </div>*@
+        
+        
         <div class="form-group">
             <label asp-for="EventStart" class="col-md-2 control-label"></label>
             <div class="col-md-10">
@@ -38,6 +34,15 @@
                 <span asp-validation-for="EventStart" class="text-danger" />
             </div>
         </div>
+
+        <div class="form-group">
+            <label asp-for="EventEnd" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="EventEnd" class="form-control" />
+                <span asp-validation-for="EventEnd" class="text-danger" />
+            </div>
+        </div>
+
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <div class="checkbox">
@@ -46,6 +51,7 @@
                 </div>
             </div>
         </div>
+
         <div class="form-group">
             <label asp-for="Username" class="col-md-2 control-label"></label>
             <div class="col-md-10">
@@ -53,6 +59,7 @@
                 <span asp-validation-for="Username" class="text-danger" />
             </div>
         </div>
+
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />

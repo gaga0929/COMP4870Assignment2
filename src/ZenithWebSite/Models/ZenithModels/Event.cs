@@ -17,6 +17,7 @@ namespace ZenithWebSite.Models.ZenithModels
         public DateTime CreationDate { get; set; }
         public bool IsActive { get; set; }
 
+
         public int ActivityId { get; set; }
         public Activity ActivityDetails { get; set; }
         
