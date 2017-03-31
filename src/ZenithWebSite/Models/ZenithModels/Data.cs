@@ -1,26 +1,88 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ZenithWebSite.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace ZenithWebSite.Models.ZenithModels
 {
     public class Data
     {
+
+        public static async Task<IdentityResult> AssignRoles(IServiceProvider services, string email, string[] roles)
+        {
+            UserManager<ApplicationUser> _userManager = services.GetService<UserManager<ApplicationUser>>();
+            ApplicationUser user = await _userManager.FindByEmailAsync(email);
+            var result = await _userManager.AddToRolesAsync(user, roles);
+
+            return result;
+        }
+
+
+
         public static void Initialize(ApplicationDbContext db)
         {
-            if (!db.Users.Any())
+
+            
+
+            if (!db.Roles.Any(r => r.Name == "Admin"))
             {
-                db.Users.Add(new ApplicationUser
+                db.Roles.Add(new IdentityRole
+                {
+                    Name = "Admin"
+                });
+            }
+
+            if (!db.Roles.Any(r => r.Name == "Member"))
+            {
+                db.Roles.Add(new IdentityRole
+                {
+                    Name = "Member"
+                });
+            }
+
+            if (!db.Users.Any(u => u.UserName == "a"))
+            {
+                var adminProfile = new ApplicationUser
                 {
                     UserName = "a",
                     FirstName = "Admin",
                     LastName = "User",
                     Email = "a@a.a"
+                };
+
+                db.Users.Add(adminProfile);
+
+                db.SaveChanges();
+
+                if (!db.Users.Any(u => u.UserName == adminProfile.UserName))
+                {
+                    var password = new PasswordHasher<ApplicationUser>();
+                    var hashed = password.HashPassword(adminProfile, "P@ssw0rd");
+                    adminProfile.PasswordHash = hashed;
+
+                    var userStore = new UserStore<ApplicationUser>(db);
+                    var result = userStore.CreateAsync(adminProfile);
+
                 }
-                
-                );
+                db.SaveChanges();
+
+            }
+
+            if (!db.Users.Any(u => u.UserName == "m")) { 
+                var memberProfile = new ApplicationUser
+                {
+                    UserName = "m",
+                    FirstName = "Member",
+                    LastName = "User",
+                    Email = "m@m.m"
+                };
+
+                db.Users.Add(memberProfile);
 
                 db.SaveChanges();
             }
@@ -154,7 +216,11 @@ namespace ZenithWebSite.Models.ZenithModels
             };
 
             db.SaveChanges();
+
+
         }
-        
+
+
+
     }
 }

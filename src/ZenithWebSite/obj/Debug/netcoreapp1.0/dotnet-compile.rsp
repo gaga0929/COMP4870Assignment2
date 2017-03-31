@@ -1,5 +1,5 @@
---temp-output:C:\Users\GaGa\Documents\Visual Studio 2015\Projects\ZenithSociety\src\ZenithWebSite\obj\Debug\netcoreapp1.0\
---out:C:\Users\GaGa\Documents\Visual Studio 2015\Projects\ZenithSociety\src\ZenithWebSite\bin\Debug\netcoreapp1.0\ZenithWebSite.dll
+--temp-output:C:\Users\GaGa\documents\visual studio 2015\Projects\ZenithSociety\src\ZenithWebSite\obj\Debug\netcoreapp1.0\
+--out:C:\Users\GaGa\documents\visual studio 2015\Projects\ZenithSociety\src\ZenithWebSite\bin\Debug\netcoreapp1.0\ZenithWebSite.dll
 --define:DEBUG
 --define:TRACE
 --define:NETCOREAPP1_0
@@ -225,40 +225,40 @@
 --reference:C:\Users\GaGa\.nuget\packages\System.Threading.Timer\4.0.1\ref\netstandard1.2\System.Threading.Timer.dll
 --reference:C:\Users\GaGa\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\GaGa\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll
---resource:"C:\Users\GaGa\Documents\Visual Studio 2015\Projects\ZenithSociety\src\ZenithWebSite\obj\Debug\netcoreapp1.0\ZenithWebSitedotnet-compile.deps.json",ZenithWebSite.deps.json
-C:\Users\GaGa\Documents\Visual Studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Program.cs
-C:\Users\GaGa\Documents\Visual Studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Startup.cs
-C:\Users\GaGa\Documents\Visual Studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Controllers\AccountController.cs
-C:\Users\GaGa\Documents\Visual Studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Controllers\ActivitiesController.cs
-C:\Users\GaGa\Documents\Visual Studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Controllers\EventsController.cs
-C:\Users\GaGa\Documents\Visual Studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Controllers\HomeController.cs
-C:\Users\GaGa\Documents\Visual Studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Controllers\ManageController.cs
-C:\Users\GaGa\Documents\Visual Studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Data\ApplicationDbContext.cs
-C:\Users\GaGa\Documents\Visual Studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Data\Migrations\00000000000000_CreateIdentitySchema.cs
-C:\Users\GaGa\Documents\Visual Studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Data\Migrations\00000000000000_CreateIdentitySchema.Designer.cs
-C:\Users\GaGa\Documents\Visual Studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Data\Migrations\20170315190424_FirstMigration.cs
-C:\Users\GaGa\Documents\Visual Studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Data\Migrations\20170315190424_FirstMigration.Designer.cs
-C:\Users\GaGa\Documents\Visual Studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Data\Migrations\ApplicationDbContextModelSnapshot.cs
-C:\Users\GaGa\Documents\Visual Studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Models\ApplicationUser.cs
-C:\Users\GaGa\Documents\Visual Studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Models\AccountViewModels\ExternalLoginConfirmationViewModel.cs
-C:\Users\GaGa\Documents\Visual Studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Models\AccountViewModels\ForgotPasswordViewModel.cs
-C:\Users\GaGa\Documents\Visual Studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Models\AccountViewModels\LoginViewModel.cs
-C:\Users\GaGa\Documents\Visual Studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Models\AccountViewModels\RegisterViewModel.cs
-C:\Users\GaGa\Documents\Visual Studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Models\AccountViewModels\ResetPasswordViewModel.cs
-C:\Users\GaGa\Documents\Visual Studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Models\AccountViewModels\SendCodeViewModel.cs
-C:\Users\GaGa\Documents\Visual Studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Models\AccountViewModels\VerifyCodeViewModel.cs
-C:\Users\GaGa\Documents\Visual Studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Models\ManageViewModels\AddPhoneNumberViewModel.cs
-C:\Users\GaGa\Documents\Visual Studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Models\ManageViewModels\ChangePasswordViewModel.cs
-C:\Users\GaGa\Documents\Visual Studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Models\ManageViewModels\ConfigureTwoFactorViewModel.cs
-C:\Users\GaGa\Documents\Visual Studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Models\ManageViewModels\FactorViewModel.cs
-C:\Users\GaGa\Documents\Visual Studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Models\ManageViewModels\IndexViewModel.cs
-C:\Users\GaGa\Documents\Visual Studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Models\ManageViewModels\ManageLoginsViewModel.cs
-C:\Users\GaGa\Documents\Visual Studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Models\ManageViewModels\RemoveLoginViewModel.cs
-C:\Users\GaGa\Documents\Visual Studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Models\ManageViewModels\SetPasswordViewModel.cs
-C:\Users\GaGa\Documents\Visual Studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Models\ManageViewModels\VerifyPhoneNumberViewModel.cs
-C:\Users\GaGa\Documents\Visual Studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Models\ZenithModels\Activity.cs
-C:\Users\GaGa\Documents\Visual Studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Models\ZenithModels\Data.cs
-C:\Users\GaGa\Documents\Visual Studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Models\ZenithModels\Event.cs
-C:\Users\GaGa\Documents\Visual Studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Services\IEmailSender.cs
-C:\Users\GaGa\Documents\Visual Studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Services\ISmsSender.cs
-C:\Users\GaGa\Documents\Visual Studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Services\MessageServices.cs
+--resource:"C:\Users\GaGa\documents\visual studio 2015\Projects\ZenithSociety\src\ZenithWebSite\obj\Debug\netcoreapp1.0\ZenithWebSitedotnet-compile.deps.json",ZenithWebSite.deps.json
+C:\Users\GaGa\documents\visual studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Program.cs
+C:\Users\GaGa\documents\visual studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Startup.cs
+C:\Users\GaGa\documents\visual studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Controllers\AccountController.cs
+C:\Users\GaGa\documents\visual studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Controllers\ActivitiesController.cs
+C:\Users\GaGa\documents\visual studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Controllers\EventsController.cs
+C:\Users\GaGa\documents\visual studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Controllers\HomeController.cs
+C:\Users\GaGa\documents\visual studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Controllers\ManageController.cs
+C:\Users\GaGa\documents\visual studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Data\ApplicationDbContext.cs
+C:\Users\GaGa\documents\visual studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Data\Migrations\00000000000000_CreateIdentitySchema.cs
+C:\Users\GaGa\documents\visual studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Data\Migrations\00000000000000_CreateIdentitySchema.Designer.cs
+C:\Users\GaGa\documents\visual studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Data\Migrations\20170315190424_FirstMigration.cs
+C:\Users\GaGa\documents\visual studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Data\Migrations\20170315190424_FirstMigration.Designer.cs
+C:\Users\GaGa\documents\visual studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Data\Migrations\ApplicationDbContextModelSnapshot.cs
+C:\Users\GaGa\documents\visual studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Models\ApplicationUser.cs
+C:\Users\GaGa\documents\visual studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Models\AccountViewModels\ExternalLoginConfirmationViewModel.cs
+C:\Users\GaGa\documents\visual studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Models\AccountViewModels\ForgotPasswordViewModel.cs
+C:\Users\GaGa\documents\visual studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Models\AccountViewModels\LoginViewModel.cs
+C:\Users\GaGa\documents\visual studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Models\AccountViewModels\RegisterViewModel.cs
+C:\Users\GaGa\documents\visual studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Models\AccountViewModels\ResetPasswordViewModel.cs
+C:\Users\GaGa\documents\visual studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Models\AccountViewModels\SendCodeViewModel.cs
+C:\Users\GaGa\documents\visual studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Models\AccountViewModels\VerifyCodeViewModel.cs
+C:\Users\GaGa\documents\visual studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Models\ManageViewModels\AddPhoneNumberViewModel.cs
+C:\Users\GaGa\documents\visual studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Models\ManageViewModels\ChangePasswordViewModel.cs
+C:\Users\GaGa\documents\visual studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Models\ManageViewModels\ConfigureTwoFactorViewModel.cs
+C:\Users\GaGa\documents\visual studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Models\ManageViewModels\FactorViewModel.cs
+C:\Users\GaGa\documents\visual studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Models\ManageViewModels\IndexViewModel.cs
+C:\Users\GaGa\documents\visual studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Models\ManageViewModels\ManageLoginsViewModel.cs
+C:\Users\GaGa\documents\visual studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Models\ManageViewModels\RemoveLoginViewModel.cs
+C:\Users\GaGa\documents\visual studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Models\ManageViewModels\SetPasswordViewModel.cs
+C:\Users\GaGa\documents\visual studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Models\ManageViewModels\VerifyPhoneNumberViewModel.cs
+C:\Users\GaGa\documents\visual studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Models\ZenithModels\Activity.cs
+C:\Users\GaGa\documents\visual studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Models\ZenithModels\Data.cs
+C:\Users\GaGa\documents\visual studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Models\ZenithModels\Event.cs
+C:\Users\GaGa\documents\visual studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Services\IEmailSender.cs
+C:\Users\GaGa\documents\visual studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Services\ISmsSender.cs
+C:\Users\GaGa\documents\visual studio 2015\Projects\ZenithSociety\src\ZenithWebSite\Services\MessageServices.cs
