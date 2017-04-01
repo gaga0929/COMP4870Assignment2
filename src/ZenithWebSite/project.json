@@ -2,6 +2,10 @@
   "userSecretsId": "aspnet-ZenithWebSite-077af6df-66e3-401d-91c1-23d9ddfc24ea",
 
   "dependencies": {
+    "Microsoft.NETCore.App": {
+      "version": "1.0.1",
+      "type": "platform"
+    },
     "Microsoft.AspNetCore.Authentication.Cookies": "1.0.0",
     "Microsoft.AspNetCore.Diagnostics": "1.0.0",
     "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "1.0.0",
@@ -58,7 +62,12 @@
   },
 
   "frameworks": {
-    "net452": {}
+    "netcoreapp1.0": {
+      "imports": [
+        "dotnet5.6",
+        "portable-net45+win8"
+      ]
+    }
   },
 
   "buildOptions": {

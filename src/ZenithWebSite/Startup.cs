@@ -87,7 +87,7 @@ namespace ZenithWebSite
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
 
-            ZenithWebSite.Models.ZenithModels.Data.Initialize(context);
+            ZenithWebSite.Models.ZenithModels.Data.Initialize(context, app.ApplicationServices);
         }
     }
 }

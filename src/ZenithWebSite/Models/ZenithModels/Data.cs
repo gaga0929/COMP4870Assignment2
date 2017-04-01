@@ -12,63 +12,53 @@ namespace ZenithWebSite.Models.ZenithModels
 {
     public class Data
     {
-
-        public static async Task<IdentityResult> AssignRoles(IServiceProvider services, string email, string[] roles)
+       
+        
+        public static void Initialize(ApplicationDbContext db, IServiceProvider serviceProvider)
         {
-            UserManager<ApplicationUser> _userManager = services.GetService<UserManager<ApplicationUser>>();
-            ApplicationUser user = await _userManager.FindByEmailAsync(email);
-            var result = await _userManager.AddToRolesAsync(user, roles);
-
-            return result;
-        }
-
-
-
-        public static void Initialize(ApplicationDbContext db)
-        {
-
-            
+            var roleStore = new RoleStore<IdentityRole>(db);
 
             if (!db.Roles.Any(r => r.Name == "Admin"))
             {
-                db.Roles.Add(new IdentityRole
-                {
-                    Name = "Admin"
-                });
+                roleStore.CreateAsync(new IdentityRole { Name = "Admin", NormalizedName = "Admin" });
             }
+
+            db.SaveChanges();
 
             if (!db.Roles.Any(r => r.Name == "Member"))
             {
-                db.Roles.Add(new IdentityRole
-                {
-                    Name = "Member"
-                });
+                roleStore.CreateAsync(new IdentityRole { Name = "Member", NormalizedName = "Member" });
             }
+
+            db.SaveChanges();
 
             if (!db.Users.Any(u => u.UserName == "a"))
             {
                 var adminProfile = new ApplicationUser
                 {
                     UserName = "a",
+                    NormalizedUserName = "A",
                     FirstName = "Admin",
                     LastName = "User",
-                    Email = "a@a.a"
+                    Email = "a@a.a",
+                    NormalizedEmail = "A@A.A",
+                    EmailConfirmed = true,
+                    LockoutEnabled = false,
+                    SecurityStamp = Guid.NewGuid().ToString()
                 };
 
                 db.Users.Add(adminProfile);
 
-                db.SaveChanges();
+                var password = new PasswordHasher<ApplicationUser>();
+                var hashed = password.HashPassword(adminProfile, "P@ssw0rd");
+                adminProfile.PasswordHash = hashed;
 
-                if (!db.Users.Any(u => u.UserName == adminProfile.UserName))
-                {
-                    var password = new PasswordHasher<ApplicationUser>();
-                    var hashed = password.HashPassword(adminProfile, "P@ssw0rd");
-                    adminProfile.PasswordHash = hashed;
+                var userStore = new UserStore<ApplicationUser>(db);
+                var result = userStore.CreateAsync(adminProfile);
 
-                    var userStore = new UserStore<ApplicationUser>(db);
-                    var result = userStore.CreateAsync(adminProfile);
+                userStore.AddToRoleAsync(adminProfile, "Admin");
+                userStore.AddToRoleAsync(adminProfile, "Member");
 
-                }
                 db.SaveChanges();
 
             }
@@ -77,13 +67,27 @@ namespace ZenithWebSite.Models.ZenithModels
                 var memberProfile = new ApplicationUser
                 {
                     UserName = "m",
+                    NormalizedUserName = "M",
                     FirstName = "Member",
                     LastName = "User",
-                    Email = "m@m.m"
+                    Email = "m@m.m",
+                    NormalizedEmail = "M@M.M",
+                    EmailConfirmed = true,
+                    LockoutEnabled = false,
+                    SecurityStamp = Guid.NewGuid().ToString()
                 };
 
                 db.Users.Add(memberProfile);
 
+                var password = new PasswordHasher<ApplicationUser>();
+                var hashed = password.HashPassword(memberProfile, "P@ssw0rd");
+                memberProfile.PasswordHash = hashed;
+
+                var userStore = new UserStore<ApplicationUser>(db);
+                var result = userStore.CreateAsync(memberProfile);
+
+                userStore.AddToRoleAsync(memberProfile, "Member");
+                
                 db.SaveChanges();
             }
 
