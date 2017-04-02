@@ -46,7 +46,7 @@
     },
     "Microsoft.EntityFrameworkCore.Sqlite": "1.0.1",
     "Microsoft.IdentityModel.Tokens": "5.0.0",
-    "AspNet.Security.OAuth.Validation": "1.0.0-alpha2-final",
+    "AspNet.Security.OAuth.Validation": "1.0.0-*",
     "OpenIddict": "1.0.0-*",
     "OpenIddict.EntityFrameworkCore": "1.0.0-*",
     "OpenIddict.Mvc": "1.0.0-*"

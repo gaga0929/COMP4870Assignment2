@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.0/",
-    "signature": "2165453abd1a24943486dd8873322b159138dc5e"
+    "signature": "9000f6d772dc5b1fcff6a3add7e4efe20993b83a"
   },
   "compilationOptions": {
     "defines": [
@@ -37,7 +37,7 @@
           "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0",
           "Microsoft.EntityFrameworkCore.Sqlite": "1.0.1",
           "Microsoft.IdentityModel.Tokens": "5.0.0",
-          "AspNet.Security.OAuth.Validation": "1.0.0-alpha2-final",
+          "AspNet.Security.OAuth.Validation": "1.0.0-rtm-0237",
           "OpenIddict": "1.0.0-beta2-0591",
           "OpenIddict.EntityFrameworkCore": "1.0.0-beta2-0591",
           "OpenIddict.Mvc": "1.0.0-beta2-0591"
@@ -46,9 +46,11 @@
           "ZenithWebSite.dll": {}
         }
       },
-      "AspNet.Security.OAuth.Validation/1.0.0-alpha2-final": {
+      "AspNet.Security.OAuth.Validation/1.0.0-rtm-0237": {
         "dependencies": {
-          "Microsoft.AspNetCore.Authentication": "1.0.0"
+          "Microsoft.AspNetCore.Authentication": "1.0.0",
+          "NETStandard.Library": "1.6.0",
+          "Newtonsoft.Json": "9.0.1"
         },
         "compile": {
           "lib/netstandard1.3/AspNet.Security.OAuth.Validation.dll": {}
@@ -3044,7 +3046,7 @@
           "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0",
           "Microsoft.EntityFrameworkCore.Sqlite": "1.0.1",
           "Microsoft.IdentityModel.Tokens": "5.0.0",
-          "AspNet.Security.OAuth.Validation": "1.0.0-alpha2-final",
+          "AspNet.Security.OAuth.Validation": "1.0.0-rtm-0237",
           "OpenIddict": "1.0.0-beta2-0591",
           "OpenIddict.EntityFrameworkCore": "1.0.0-beta2-0591",
           "OpenIddict.Mvc": "1.0.0-beta2-0591"
@@ -3053,9 +3055,11 @@
           "ZenithWebSite.dll": {}
         }
       },
-      "AspNet.Security.OAuth.Validation/1.0.0-alpha2-final": {
+      "AspNet.Security.OAuth.Validation/1.0.0-rtm-0237": {
         "dependencies": {
-          "Microsoft.AspNetCore.Authentication": "1.0.0"
+          "Microsoft.AspNetCore.Authentication": "1.0.0",
+          "NETStandard.Library": "1.6.0",
+          "Newtonsoft.Json": "9.0.1"
         },
         "runtime": {
           "lib/netstandard1.3/AspNet.Security.OAuth.Validation.dll": {}
@@ -5932,10 +5936,10 @@
       "serviceable": false,
       "sha512": ""
     },
-    "AspNet.Security.OAuth.Validation/1.0.0-alpha2-final": {
+    "AspNet.Security.OAuth.Validation/1.0.0-rtm-0237": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-XQrl3Yf4KkyhWEGw8dLHMHrRPpFQI57WSDoXGxysu4/8aO2aTvV7k3Dax9V0M2ASfMIe8Nix2xLsDuYweF7MPA=="
+      "sha512": "sha512-c+Mo9KRKNw7t1qkG9X+hL35KGPMOHexrztLFzUBSS+TmHJpDcbCSSHc3SSghARoxQEFfXM05F2n3K5xRTKq9wA=="
     },
     "AspNet.Security.OpenIdConnect.Extensions/1.0.0-rc1-final": {
       "type": "package",

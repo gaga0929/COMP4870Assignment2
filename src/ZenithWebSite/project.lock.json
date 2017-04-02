@@ -3,10 +3,12 @@
   "version": 2,
   "targets": {
     ".NETCoreApp,Version=v1.0": {
-      "AspNet.Security.OAuth.Validation/1.0.0-alpha2-final": {
+      "AspNet.Security.OAuth.Validation/1.0.0-rtm-0237": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AspNetCore.Authentication": "1.0.0"
+          "Microsoft.AspNetCore.Authentication": "1.0.0",
+          "NETStandard.Library": "1.6.0",
+          "Newtonsoft.Json": "9.0.1"
         },
         "compile": {
           "lib/netstandard1.3/AspNet.Security.OAuth.Validation.dll": {}
@@ -4649,13 +4651,13 @@
     }
   },
   "libraries": {
-    "AspNet.Security.OAuth.Validation/1.0.0-alpha2-final": {
-      "sha512": "XQrl3Yf4KkyhWEGw8dLHMHrRPpFQI57WSDoXGxysu4/8aO2aTvV7k3Dax9V0M2ASfMIe8Nix2xLsDuYweF7MPA==",
+    "AspNet.Security.OAuth.Validation/1.0.0-rtm-0237": {
+      "sha512": "c+Mo9KRKNw7t1qkG9X+hL35KGPMOHexrztLFzUBSS+TmHJpDcbCSSHc3SSghARoxQEFfXM05F2n3K5xRTKq9wA==",
       "type": "package",
-      "path": "AspNet.Security.OAuth.Validation/1.0.0-alpha2-final",
+      "path": "AspNet.Security.OAuth.Validation/1.0.0-rtm-0237",
       "files": [
-        "AspNet.Security.OAuth.Validation.1.0.0-alpha2-final.nupkg.sha512",
-        "AspNet.Security.OAuth.Validation.nuspec",
+        "aspnet.security.oauth.validation.1.0.0-rtm-0237.nupkg.sha512",
+        "aspnet.security.oauth.validation.nuspec",
         "lib/net451/AspNet.Security.OAuth.Validation.dll",
         "lib/net451/AspNet.Security.OAuth.Validation.xml",
         "lib/netstandard1.3/AspNet.Security.OAuth.Validation.dll",
@@ -11549,7 +11551,7 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "AspNet.Security.OAuth.Validation >= 1.0.0-alpha2-final",
+      "AspNet.Security.OAuth.Validation >= 1.0.0-*",
       "Microsoft.AspNetCore.Authentication.Cookies >= 1.0.0",
       "Microsoft.AspNetCore.Diagnostics >= 1.0.0",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 1.0.0",

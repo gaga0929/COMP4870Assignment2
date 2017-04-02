@@ -21,7 +21,7 @@ using Microsoft.Extensions.Options;
 using OpenIddict.Core;
 using ZenithWebSite.Models;
 
-namespace AspToken.Controllers
+namespace AuthorizationServer.Controllers
 {
     public class AuthorizationController : Controller
     {
@@ -113,6 +113,7 @@ namespace AspToken.Controllers
 
                 return SignIn(ticket.Principal, ticket.Properties, ticket.AuthenticationScheme);
             }
+
             else if (request.IsRefreshTokenGrantType())
             {
                 // Retrieve the claims principal stored in the refresh token.
@@ -174,7 +175,8 @@ namespace AspToken.Controllers
                 // Set the list of scopes granted to the client application.
                 // Note: the offline_access scope must be granted
                 // to allow OpenIddict to return a refresh token.
-                ticket.SetScopes(new[] {
+                ticket.SetScopes(new[]
+                {
                     OpenIdConnectConstants.Scopes.OpenId,
                     OpenIdConnectConstants.Scopes.Email,
                     OpenIdConnectConstants.Scopes.Profile,
@@ -182,6 +184,7 @@ namespace AspToken.Controllers
                     OpenIddictConstants.Scopes.Roles
                 }.Intersect(request.GetScopes()));
             }
+
             ticket.SetResources("resource_server");
 
             // Note: by default, claims are NOT automatically included in the access and identity tokens.
@@ -196,7 +199,8 @@ namespace AspToken.Controllers
                     continue;
                 }
 
-                var destinations = new List<string> {
+                var destinations = new List<string>
+                {
                     OpenIdConnectConstants.Destinations.AccessToken
                 };
 
@@ -208,10 +212,11 @@ namespace AspToken.Controllers
                 {
                     destinations.Add(OpenIdConnectConstants.Destinations.IdentityToken);
                 }
+
                 claim.SetDestinations(destinations);
             }
+
             return ticket;
         }
     }
-
 }
