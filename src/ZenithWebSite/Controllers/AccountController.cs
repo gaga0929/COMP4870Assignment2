@@ -11,6 +11,8 @@ using Microsoft.Extensions.Logging;
 using ZenithWebSite.Models;
 using ZenithWebSite.Models.AccountViewModels;
 using ZenithWebSite.Services;
+using ZenithWebSite.Data;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace ZenithWebSite.Controllers
 {
@@ -22,19 +24,22 @@ namespace ZenithWebSite.Controllers
         private readonly IEmailSender _emailSender;
         private readonly ISmsSender _smsSender;
         private readonly ILogger _logger;
+        private readonly ApplicationDbContext _context;
 
         public AccountController(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
             IEmailSender emailSender,
             ISmsSender smsSender,
-            ILoggerFactory loggerFactory)
+            ILoggerFactory loggerFactory,
+            ApplicationDbContext context)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _emailSender = emailSender;
             _smsSender = smsSender;
             _logger = loggerFactory.CreateLogger<AccountController>();
+            _context = context;
         }
 
         //
@@ -106,6 +111,8 @@ namespace ZenithWebSite.Controllers
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser { UserName = model.UserName, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName };
+                var userStore = new UserStore<ApplicationUser>(_context);
+                await userStore.AddToRoleAsync(user, "Member");
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
