@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+        EventId = 1
+        // EventStart 
+        // EventEnd 
+        Username = "Test"
+        CreationDate 
+        // IsActive 
+        // ActivityId 
+        // ActivityDetails
 }
