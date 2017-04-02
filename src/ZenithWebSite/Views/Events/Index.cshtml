@@ -13,6 +13,9 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.ActivityDetails.Description)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.CreationDate)
             </th>
             
@@ -36,6 +39,9 @@
     <tbody>
 @foreach (var item in Model.OrderBy(a => a.EventStart)) {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ActivityDetails.Description)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.CreationDate)
             </td>

@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using ZenithWebSite.Data;
 using ZenithWebSite.Models.ZenithModels;
 using Microsoft.AspNetCore.Cors;
+using Microsoft.EntityFrameworkCore;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -26,14 +27,16 @@ namespace ZenithWebSite.Controllers
         [HttpGet]
         public IEnumerable<Event> Get()
         {
-            return _context.Events.ToList();
+            var events = _context.Events.Include(p => p.ActivityDetails);
+            return events.ToList();
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
         public Event Get(int id)
         {
-            return _context.Events.FirstOrDefault(s => s.EventId == id);
+            var events = _context.Events.Include(p => p.ActivityDetails);
+            return events.FirstOrDefault(s => s.EventId == id);
         }
 
         // POST api/values
