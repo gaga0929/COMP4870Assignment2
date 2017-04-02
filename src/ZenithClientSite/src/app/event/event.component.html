@@ -1,0 +1,43 @@
+<table *ngIf="events" border="1">
+  <thead>
+    <tr>
+      <th>Activity Details</th>
+      <th>Event Start</th>
+      <th>Event End</th>
+      <th>Creator</th>
+      <th>Creation Date</th>
+      <th>Is Active</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let e of events; let i=index;" (click)="onSelect(e)" [class.selected]="e === selectedEvent" >
+      <td [routerLink]="['/eventdetail', e.eventId]" >{{e.activityDetails.description}}</td>
+      <td>{{e.eventStart}}</td>
+      <td>{{e.eventEnd}}</td>
+      <td>{{e.username}}</td>
+      <td>{{e.creationDate}}</td>
+      <td>{{e.isActive}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<!--<app-event-detail [selectedEvent]="selected"></app-event-detail>-->
+
+
+
+<div *ngIf="selectedEvent">
+  <h2>
+    {{selectedEvent.eventStart | uppercase}} - {{selectedEvent.activityDetails.description | uppercase}}
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>
+<br/>
+  <div>
+    <p><label>Activity id: </label><input [(ngModel)]="newEvent.activityId" placeholder="Is Active"></p>
+    <!--<p><label>Activity details: </label><input [(ngModel)]="newEvent.activityDetails.description" placeholder="Activity details"></p>-->
+    <p><label>Event start: </label><input [(ngModel)]="newEvent.eventStart" placeholder="Event start"></p>
+    <p><label>Creator: </label><input [(ngModel)]="newEvent.eventEnd" placeholder="Event end"></p>
+    <p><label>Creation date: </label><input [(ngModel)]="newEvent.creationDate" placeholder="Creation date"></p>
+    <p><label>Is Active: </label><input [(ngModel)]="newEvent.isActive" placeholder="Is Active"></p>
+    <button (click)="add(newEvent);">Add</button>
+</div>

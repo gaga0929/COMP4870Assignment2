@@ -1,0 +1,18 @@
+<div *ngIf="selectedEvent">
+<p> Activity details : {{selectedEvent.activityDetails.description}} </p>
+<p> Event start : {{selectedEvent.eventStart}} </p>
+<p> Event end : {{selectedEvent.eventEnd}} </p>
+<p> Creator : {{selectedEvent.username}} </p>
+<p> Creation date : {{selectedEvent.creationDate}} </p>
+<p> Is active : {{selectedEvent.isActive}} </p>
+<div>
+    <p><label>Activity details: </label><input [(ngModel)]="selectedEvent.activityDetails.description" placeholder="Activity details"></p>
+    <p><label>Event start: </label><input [(ngModel)]="selectedEvent.eventStart" placeholder="Event start"></p>
+    <p><label>Creator: </label><input [(ngModel)]="selectedEvent.eventEnd" placeholder="Event end"></p>
+    <p><label>Creation date: </label><input [(ngModel)]="selectedEvent.creationDate" placeholder="Creation date"></p>
+    <p><label>Is Active: </label><input [(ngModel)]="selectedEvent.isActive" placeholder="Is Active"></p>
+</div>
+</div>
+
+  <button (click)="goBack()">Back</button>  &nbsp;&nbsp;&nbsp;&nbsp;<button (click)="save()">Save</button> 
+

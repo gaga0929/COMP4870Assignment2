@@ -5,14 +5,26 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
+import { EventDetailComponent } from './event-detail/event-detail.component';
+import { EventComponent } from './event/event.component';
+
+import { RouterModule } from '@angular/router';
+import { DashboardComponent } from './dashboard/dashboard.component'; 
+
+import { AppRoutingModule } from './app-routing.module';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EventDetailComponent,
+    EventComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

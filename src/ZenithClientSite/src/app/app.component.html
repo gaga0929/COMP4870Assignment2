@@ -1,53 +1,6 @@
-<h1>
-  {{title}}
-</h1>
-
-
-<table *ngIf="events" border="1">
-  <thead>
-    <tr>
-      <th>Event ID</th>
-      <th>Event Start</th>
-      <th>Event End</th>
-      <th>Creator</th>
-      <th>Creation Date</th>
-      <th>Is Active</th>
-      <th>Activity Id</th>
-      <th>Activity Details</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let e of events; let i=index;" (click)="onSelect(e)" [class.selected]="e === selected" >
-      <td>{{e.eventId}}</td>
-      <td>{{e.eventStart}}</td>
-      <td>{{e.eventEnd}}</td>
-      <td>{{e.username}}</td>
-      <td>{{e.creationDate}}</td>
-      <td>{{e.isActive}}</td>
-      <td>{{e.activityId}}</td>
-      <td>{{e.activityDetails.description}}</td>
-    </tr>
-  </tbody>
-</table>
-
-<div *ngIf="selected">
-<p> Event id : {{selected.eventId}} </p>
-<p> Event start : {{selected.eventStart}} </p>
-<p> Event end : {{selected.eventEnd}} </p>
-<p> Creator : {{selected.username}} </p>
-<p> Creation date : {{selected.creationDate}} </p>
-<p> Is active : {{selected.isActive}} </p>
-<p> Activity id : {{selected.activityId}} </p>
-<p> Activity details : {{selected.activityDetails.description}} </p>
-
-
-<div>
-    <p><label>Event id: </label><input [(ngModel)]="selected.eventId" placeholder="Event id"></p>
-    <p><label>Event start: </label><input [(ngModel)]="selected.eventStart" placeholder="Event start"></p>
-    <p><label>Creator: </label><input [(ngModel)]="selected.eventEnd" placeholder="Event end"></p>
-    <p><label>Creation date: </label><input [(ngModel)]="selected.creationDate" placeholder="Creation date"></p>
-    <p><label>Is Active: </label><input [(ngModel)]="selected.isActive" placeholder="Is Active"></p>
-    <p><label>Activity id: </label><input [(ngModel)]="selected.activityId" placeholder="Is Active"></p>
-    <p><label>Activity details: </label><input [(ngModel)]="selected.activityDetails.description" placeholder="Activity details"></p>
-</div>
-</div>
+<h1>{{title}}</h1>
+<nav>
+  <a routerLink="/dashboard">Dashboard</a>
+    <a routerLink="/events">Events</a>
+</nav>
+<router-outlet></router-outlet>

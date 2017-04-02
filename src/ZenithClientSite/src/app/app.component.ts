@@ -1,25 +1,14 @@
-import { Component } from '@angular/core';
-import { Event } from './Event';
-import {Activity} from './Activity';
-import {DUMMY_DATA} from './data/dummy-data'; 
+import {Component } from '@angular/core';
+import {EventService} from './event.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [EventService]
 })
 export class AppComponent {
-  
-  title ="Zenith Society";
-
-  selected: Event; 
-
-  events = DUMMY_DATA;
-  
-  onSelect(event: Event): void {
-    this.selected= event;
-  }
-
+  title = 'Zenith Society';
 }
 
 
