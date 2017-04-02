@@ -6,13 +6,16 @@ using Microsoft.AspNetCore.Mvc;
 using ZenithWebSite.Data;
 using ZenithWebSite.Models.ZenithModels;
 using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Authorization;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace ZenithWebSite.Controllers
 {
     [Route("api/[controller]")]
+    [Produces("application/json")]
     [EnableCors("CorsPolicy")]
+    [Authorize]
     public class ActivitiesApiController : Controller
     {
         private ApplicationDbContext _context;
