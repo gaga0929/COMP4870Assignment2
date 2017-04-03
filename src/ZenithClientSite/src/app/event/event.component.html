@@ -33,11 +33,20 @@
 </div>
 <br/>
   <div>
-    <p><label>Activity id: </label><input [(ngModel)]="newEvent.activityId" placeholder="Is Active"></p>
     <!--<p><label>Activity details: </label><input [(ngModel)]="newEvent.activityDetails.description" placeholder="Activity details"></p>-->
+<label>Activity: </label>
+<select [ngModel]="selectedActivity | json" (ngModelChange)="onChange($event)">
+    <option *ngFor="let a of activities" [ngValue]="a">{{a.description}}</option>
+</select>
+
     <p><label>Event start: </label><input [(ngModel)]="newEvent.eventStart" placeholder="Event start"></p>
-    <p><label>Creator: </label><input [(ngModel)]="newEvent.eventEnd" placeholder="Event end"></p>
+    <p><label>Event end: </label><input [(ngModel)]="newEvent.eventEnd" placeholder="Event end"></p>
+    <p><label>Creator: </label><input [(ngModel)]="newEvent.username" placeholder="Creator"></p>
     <p><label>Creation date: </label><input [(ngModel)]="newEvent.creationDate" placeholder="Creation date"></p>
     <p><label>Is Active: </label><input [(ngModel)]="newEvent.isActive" placeholder="Is Active"></p>
     <button (click)="add(newEvent);">Add</button>
 </div>
+
+
+<p>{{activities | json}}</p>
+<p>{{events | json}}</p>

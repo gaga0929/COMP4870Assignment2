@@ -1,0 +1,30 @@
+<table *ngIf="activities" border="1">
+  <thead>
+    <tr>
+      <th>Activity Details</th>
+      <th>Creation Date</th>      
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let a of activities; let i=index;" (click)="onSelect(a)" [class.selected]="a === selectedActivity" >
+      <td [routerLink]="['/activitydetail', a.activityId]" >{{a.description}}</td>
+      <td>{{a.creationDate}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<!--<app-event-detail [selectedEvent]="selected"></app-event-detail>-->
+
+
+
+<div *ngIf="selectedActivity">
+  <h2>
+    {{selectedActivity.description | uppercase}}
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>
+<br/>
+  <div>
+    <p><label>Description: </label><input [(ngModel)]="newActivity.description" placeholder="Activity Description"></p>
+    <button (click)="add(newActivity);">Add</button>
+</div>

@@ -1,0 +1,9 @@
+<div *ngIf="selectedActivity">
+<p> Activity details : {{selectedActivity.description}} </p>
+<p> Creation date : {{selectedActivity.creationDate}} </p>
+<div>
+    <p><label>Activity details: </label><input [(ngModel)]="selectedActivity.description" placeholder="Activity details"></p>
+</div>
+</div>
+
+  <button (click)="goBack()">Back</button>  &nbsp;&nbsp;&nbsp;&nbsp;<button (click)="save()">Save</button> 

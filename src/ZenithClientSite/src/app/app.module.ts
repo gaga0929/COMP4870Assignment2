@@ -12,13 +12,17 @@ import { RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component'; 
 
 import { AppRoutingModule } from './app-routing.module';
+import { ActivityComponent } from './activity/activity.component';
+import { ActivityDetailComponent } from './activity-detail/activity-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EventDetailComponent,
     EventComponent,
-    DashboardComponent
+    DashboardComponent,
+    ActivityComponent,
+    ActivityDetailComponent
   ],
   imports: [
     BrowserModule,

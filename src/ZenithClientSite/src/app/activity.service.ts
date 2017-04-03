@@ -1,27 +1,28 @@
+
 import { Injectable } from '@angular/core';
-import {Event} from './event'
+import {Activity} from './activity'
 
 import { Headers, Http, Response } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
 
 @Injectable()
-export class EventService {
+export class ActivityService {
 
   constructor(private http: Http) { } 
 
-  private BASE_URL = "http://localhost:5000/api/eventsapi"; 
+  private BASE_URL = "http://localhost:5000/api/activitiesapi"; 
 
-  getEvents(): Promise<Event []> { 
+  getActivities(): Promise<Activity []> { 
     return this.http.get(this.BASE_URL)
    .toPromise()
-   .then(response => response.json() as Event[])
+   .then(response => response.json() as Activity[])
    .catch(this.handleError);
   }
 
-  getEventById(id: number): Promise<Event> {
-  return this.getEvents()
-    .then(result => result.find(event => event.eventId === id));
+  getActivityById(id: number): Promise<Activity> {
+  return this.getActivities()
+    .then(result => result.find(activity => activity.activityId === id));
   } 
 
   private handleError(error: any): Promise<any> {
@@ -31,21 +32,22 @@ export class EventService {
 
 private headers = new Headers({'Content-Type': 'application/json'});
 
-update(event: Event): Promise<Event> {
-  const url = `${this.BASE_URL}/${event.eventId}`;
+update(activity: Activity): Promise<Activity> {
+  const url = `${this.BASE_URL}/${activity.activityId}`;
   return this.http
-    .put(url, JSON.stringify(event), {headers: this.headers})
+    .put(url, JSON.stringify(activity), {headers: this.headers})
     .toPromise()
-    .then(() => event)
+    .then(() => activity)
     .catch(this.handleError);
 }
 
-create(newEvent: Event): Promise<Event> {
+create(newActivity: Activity): Promise<Activity> {
   return this.http
-    .post(this.BASE_URL, JSON.stringify(newEvent), {headers: this.headers})
+    .post(this.BASE_URL, JSON.stringify(newActivity), {headers: this.headers})
     .toPromise()
     .then(res => res.json().data)
     .catch(this.handleError);
 }
+
 
 }
