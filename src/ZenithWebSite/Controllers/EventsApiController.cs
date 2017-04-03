@@ -16,7 +16,7 @@ namespace ZenithWebSite.Controllers
     [Route("api/[controller]")]
     [Produces("application/json")]
     [EnableCors("CorsPolicy")]
-    [Authorize]
+    //[Authorize]
     public class EventsApiController : Controller
     {
         private ApplicationDbContext _context;

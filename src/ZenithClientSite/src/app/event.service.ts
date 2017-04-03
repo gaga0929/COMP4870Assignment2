@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Event} from './event'
+import {Activity} from './activity'
 
 import { Headers, Http, Response } from '@angular/http';
 import 'rxjs/add/operator/toPromise';

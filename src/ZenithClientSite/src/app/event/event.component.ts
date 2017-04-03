@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   selector: 'app-root',
   templateUrl: './event.component.html',
   styleUrls: ['./event.component.css'],
-  providers: [ActivityService , EventService]
+  providers: [EventService, ActivityService]
 })
 
 export class EventComponent implements OnInit {
@@ -20,7 +20,7 @@ export class EventComponent implements OnInit {
   
   events : Event[]= [];
 
-  activities: Activity[] = [];
+  activities : Activity[] = [];
 
   newEvent: Event = new Event();
 
@@ -59,6 +59,7 @@ export class EventComponent implements OnInit {
     .then(events => this.events = events);
   }
 
+  
   getActivities(): void {
       this.activityService.getActivities()
     .then(activities => this.activities = activities);
@@ -66,6 +67,7 @@ export class EventComponent implements OnInit {
   
   ngOnInit(): void {
     this.getEvents();
+    this.getActivities();
   }
 
  gotoDetail(): void {

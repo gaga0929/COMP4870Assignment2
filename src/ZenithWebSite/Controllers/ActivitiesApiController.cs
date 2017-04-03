@@ -15,7 +15,7 @@ namespace ZenithWebSite.Controllers
     [Route("api/[controller]")]
     [Produces("application/json")]
     [EnableCors("CorsPolicy")]
-    [Authorize]
+    //[Authorize]
     public class ActivitiesApiController : Controller
     {
         private ApplicationDbContext _context;
