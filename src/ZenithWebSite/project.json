@@ -44,7 +44,12 @@
       "version": "1.0.0-preview2-final",
       "type": "build"
     },
-    "Microsoft.EntityFrameworkCore.Sqlite": "1.0.1"
+    "Microsoft.EntityFrameworkCore.Sqlite": "1.0.1",
+    "Microsoft.IdentityModel.Tokens": "5.0.0",
+    "AspNet.Security.OAuth.Validation": "1.0.0-*",
+    "OpenIddict": "1.0.0-*",
+    "OpenIddict.EntityFrameworkCore": "1.0.0-*",
+    "OpenIddict.Mvc": "1.0.0-*"
   },
 
   "tools": {

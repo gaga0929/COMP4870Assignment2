@@ -7,13 +7,16 @@ using ZenithWebSite.Data;
 using ZenithWebSite.Models.ZenithModels;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace ZenithWebSite.Controllers
 {
     [Route("api/[controller]")]
+    [Produces("application/json")]
     [EnableCors("CorsPolicy")]
+    [Authorize]
     public class EventsApiController : Controller
     {
         private ApplicationDbContext _context;
@@ -41,30 +44,45 @@ namespace ZenithWebSite.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]Event value)
+        public async Task<IActionResult> Post([FromBody]Event value)
         {
-            _context.Events.Add(value);
-            _context.SaveChanges();
+            if (ModelState.IsValid)
+            {
+                _context.Events.Add(value);
+                await _context.SaveChangesAsync();
+                return Ok();
+            }
+            return BadRequest();
         }
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]Event value)
+        public async Task<IActionResult> Put(int id, [FromBody]Event value)
         {
-            _context.Events.Update(value);
-            _context.SaveChanges();
+            if (ModelState.IsValid)
+            {
+                _context.Events.Update(value);
+                await _context.SaveChangesAsync();
+                return Ok();
+            }
+            return BadRequest();
         }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            var value = _context.Events.FirstOrDefault(t => t.EventId == id);
-            if (value != null)
+            if (ModelState.IsValid)
             {
-                _context.Events.Remove(value);
-                _context.SaveChanges();
+                var value = _context.Events.FirstOrDefault(t => t.EventId == id);
+                if (value != null)
+                {
+                    _context.Events.Remove(value);
+                    _context.SaveChanges();
+                }
+                return Ok();
             }
+            return BadRequest();
         }
     }
 }

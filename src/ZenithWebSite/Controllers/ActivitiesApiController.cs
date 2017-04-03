@@ -6,13 +6,16 @@ using Microsoft.AspNetCore.Mvc;
 using ZenithWebSite.Data;
 using ZenithWebSite.Models.ZenithModels;
 using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Authorization;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace ZenithWebSite.Controllers
 {
     [Route("api/[controller]")]
+    [Produces("application/json")]
     [EnableCors("CorsPolicy")]
+    [Authorize]
     public class ActivitiesApiController : Controller
     {
         private ApplicationDbContext _context;
@@ -38,30 +41,45 @@ namespace ZenithWebSite.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]Activity activity)
+        public async Task<IActionResult> Post([FromBody]Activity activity)
         {
-            _context.Activities.Add(activity);
-            _context.SaveChanges();
+            if (ModelState.IsValid)
+            {
+                _context.Activities.Add(activity);
+                await _context.SaveChangesAsync();
+                return Ok();
+            }
+            return BadRequest();
         }
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]Activity activity)
+        public async Task<IActionResult> Put(int id, [FromBody]Activity activity)
         {
-            _context.Activities.Update(activity);
-            _context.SaveChanges();
+            if (ModelState.IsValid)
+            {
+                _context.Activities.Update(activity);
+                await _context.SaveChangesAsync();
+                return Ok();
+            }
+            return BadRequest();
         }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            var activity = _context.Activities.FirstOrDefault(t => t.ActivityId == id);
-            if (activity != null)
+            if (ModelState.IsValid)
             {
-                _context.Activities.Remove(activity);
-                _context.SaveChanges();
+                var activity = _context.Activities.FirstOrDefault(t => t.ActivityId == id);
+                if (activity != null)
+                {
+                    _context.Activities.Remove(activity);
+                    await _context.SaveChangesAsync();
+                    return Ok();
+                }
             }
+            return BadRequest();
         }
     }
 }
