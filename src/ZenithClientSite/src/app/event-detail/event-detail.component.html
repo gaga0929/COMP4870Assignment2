@@ -6,7 +6,10 @@
 <p> Creation date : {{selectedEvent.creationDate}} </p>
 <p> Is active : {{selectedEvent.isActive}} </p>
 <div>
-    <p><label>Activity details: </label><input [(ngModel)]="selectedEvent.activityDetails.description" placeholder="Activity details"></p>
+    <label>Activity: </label>
+    <select [ngModel]="selectedActivity | json" (ngModelChange)="onChange($event)">
+      <option *ngFor="let a of activities" [ngValue]="a">{{a.description}}</option>
+    </select>
     <p><label>Event start: </label><input [(ngModel)]="selectedEvent.eventStart" placeholder="Event start"></p>
     <p><label>Creator: </label><input [(ngModel)]="selectedEvent.username" placeholder="Event end"></p>
     <p><label>Creation date: </label><input [(ngModel)]="selectedEvent.creationDate" placeholder="Creation date"></p>

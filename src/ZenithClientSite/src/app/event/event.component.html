@@ -35,9 +35,9 @@
   <div>
     <!--<p><label>Activity details: </label><input [(ngModel)]="newEvent.activityDetails.description" placeholder="Activity details"></p>-->
 <label>Activity: </label>
-<select [ngModel]="selectedActivity | json" (ngModelChange)="onChange($event)">
-    <option *ngFor="let a of activities" [ngValue]="a">{{a.description}}</option>
-</select>
+    <select [ngModel]="selectedActivity | json" (ngModelChange)="onChange($event)">
+      <option *ngFor="let a of activities" [ngValue]="a">{{a.description}}</option>
+    </select>
 
     <p><label>Event start: </label><input [(ngModel)]="newEvent.eventStart" placeholder="Event start"></p>
     <p><label>Event end: </label><input [(ngModel)]="newEvent.eventEnd" placeholder="Event end"></p>
