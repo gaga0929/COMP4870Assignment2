@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAGExY7OGnV06N8wYY6Qk+ogAAAAACAAAAAAAQZgAAAAEAACAAAACSA192IIYQbnoZ5KDtFfsJihsqOHOboe6xnCgubYPjiQAAAAAOgAAAAAIAACAAAADSNBHvjaJKuWi0h/fponhq30+87gJvdLndDnxov3HJjIAAAABfzQv7K0lv8fugJjrybctgIGJ6ALxBigQJX2RxpMcdM14DnH6H16EsvoSxzxYQwBkZ6HwLN/j5HqMTQ4/JHdYWtoE6NLiHIsufAQS0ayGxux+FLg8ERv9jXZ3w+l+LEqa8+oQJhddgHOpA3wmZw7SZS0HWQVDFgtLnPYqPvxmaSUAAAACzc5qTNW569uZExEpH8CQCi9mHFKjqv/7t8NNLW/X7lCEU2oTaT0UAFAaTvaWF1nFnwIfGqb5aFJi3PkFO7irb</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=tcp:zenithwebsite20170402094613dbserver.database.windows.net,1433;Initial Catalog=ZenithWebSite20170402094613_db;User Id=dave@zenithwebsite20170402094613dbserver;Password=P@$$w0rd</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EfMigrations Include="ZenithWebSite.Data.ApplicationDbContext">
+      <Value>Data Source=tcp:zenithwebsite20170402094613dbserver.database.windows.net,1433;Initial Catalog=ZenithWebSite20170402094613_db;User Id=dave@zenithwebsite20170402094613dbserver;Password=P@$$w0rd</Value>
+    </EfMigrations>
+  </ItemGroup>
+</Project>

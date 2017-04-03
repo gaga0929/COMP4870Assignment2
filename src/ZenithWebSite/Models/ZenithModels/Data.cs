@@ -50,7 +50,7 @@ namespace ZenithWebSite.Models.ZenithModels
                 db.Users.Add(adminProfile);
 
                 var password = new PasswordHasher<ApplicationUser>();
-                var hashed = password.HashPassword(adminProfile, "P@ssw0rd");
+                var hashed = password.HashPassword(adminProfile, "P@$$w0rd");
                 adminProfile.PasswordHash = hashed;
 
                 var userStore = new UserStore<ApplicationUser>(db);
@@ -80,7 +80,7 @@ namespace ZenithWebSite.Models.ZenithModels
                 db.Users.Add(memberProfile);
 
                 var password = new PasswordHasher<ApplicationUser>();
-                var hashed = password.HashPassword(memberProfile, "P@ssw0rd");
+                var hashed = password.HashPassword(memberProfile, "P@$$w0rd");
                 memberProfile.PasswordHash = hashed;
 
                 var userStore = new UserStore<ApplicationUser>(db);

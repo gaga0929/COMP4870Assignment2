@@ -131,7 +131,7 @@ namespace ZenithWebSite
             //        template: "{controller=Home}/{action=Index}/{id?}");
             //});
             app.UseMvcWithDefaultRoute();
-
+            context.Database.Migrate();
             ZenithWebSite.Models.ZenithModels.Data.Initialize(context, app.ApplicationServices);
         }
     }
